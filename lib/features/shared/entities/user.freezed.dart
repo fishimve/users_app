@@ -14,15 +14,347 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+User _$UserFromJson(Map<String, dynamic> json) {
+  return _User.fromJson(json);
+}
+
+/// @nodoc
+mixin _$User {
+  String get gender => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  String get nat => throw _privateConstructorUsedError;
+  String get cell => throw _privateConstructorUsedError;
+  Location get location => throw _privateConstructorUsedError;
+  Name get name => throw _privateConstructorUsedError;
+  Picture get picture => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res, User>;
+  @useResult
+  $Res call(
+      {String gender,
+      String email,
+      String phone,
+      String nat,
+      String cell,
+      Location location,
+      Name name,
+      Picture picture});
+
+  $LocationCopyWith<$Res> get location;
+  $NameCopyWith<$Res> get name;
+  $PictureCopyWith<$Res> get picture;
+}
+
+/// @nodoc
+class _$UserCopyWithImpl<$Res, $Val extends User>
+    implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gender = null,
+    Object? email = null,
+    Object? phone = null,
+    Object? nat = null,
+    Object? cell = null,
+    Object? location = null,
+    Object? name = null,
+    Object? picture = null,
+  }) {
+    return _then(_value.copyWith(
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      nat: null == nat
+          ? _value.nat
+          : nat // ignore: cast_nullable_to_non_nullable
+              as String,
+      cell: null == cell
+          ? _value.cell
+          : cell // ignore: cast_nullable_to_non_nullable
+              as String,
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      picture: null == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as Picture,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LocationCopyWith<$Res> get location {
+    return $LocationCopyWith<$Res>(_value.location, (value) {
+      return _then(_value.copyWith(location: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NameCopyWith<$Res> get name {
+    return $NameCopyWith<$Res>(_value.name, (value) {
+      return _then(_value.copyWith(name: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PictureCopyWith<$Res> get picture {
+    return $PictureCopyWith<$Res>(_value.picture, (value) {
+      return _then(_value.copyWith(picture: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$UserImplCopyWith(
+          _$UserImpl value, $Res Function(_$UserImpl) then) =
+      __$$UserImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String gender,
+      String email,
+      String phone,
+      String nat,
+      String cell,
+      Location location,
+      Name name,
+      Picture picture});
+
+  @override
+  $LocationCopyWith<$Res> get location;
+  @override
+  $NameCopyWith<$Res> get name;
+  @override
+  $PictureCopyWith<$Res> get picture;
+}
+
+/// @nodoc
+class __$$UserImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$UserImpl>
+    implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? gender = null,
+    Object? email = null,
+    Object? phone = null,
+    Object? nat = null,
+    Object? cell = null,
+    Object? location = null,
+    Object? name = null,
+    Object? picture = null,
+  }) {
+    return _then(_$UserImpl(
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      nat: null == nat
+          ? _value.nat
+          : nat // ignore: cast_nullable_to_non_nullable
+              as String,
+      cell: null == cell
+          ? _value.cell
+          : cell // ignore: cast_nullable_to_non_nullable
+              as String,
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as Location,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      picture: null == picture
+          ? _value.picture
+          : picture // ignore: cast_nullable_to_non_nullable
+              as Picture,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UserImpl with DiagnosticableTreeMixin implements _User {
+  const _$UserImpl(
+      {this.gender = '',
+      this.email = '',
+      this.phone = '',
+      this.nat = '',
+      this.cell = '',
+      required this.location,
+      required this.name,
+      required this.picture});
+
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserImplFromJson(json);
+
+  @override
+  @JsonKey()
+  final String gender;
+  @override
+  @JsonKey()
+  final String email;
+  @override
+  @JsonKey()
+  final String phone;
+  @override
+  @JsonKey()
+  final String nat;
+  @override
+  @JsonKey()
+  final String cell;
+  @override
+  final Location location;
+  @override
+  final Name name;
+  @override
+  final Picture picture;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'User(gender: $gender, email: $email, phone: $phone, nat: $nat, cell: $cell, location: $location, name: $name, picture: $picture)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'User'))
+      ..add(DiagnosticsProperty('gender', gender))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('phone', phone))
+      ..add(DiagnosticsProperty('nat', nat))
+      ..add(DiagnosticsProperty('cell', cell))
+      ..add(DiagnosticsProperty('location', location))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('picture', picture));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserImpl &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.nat, nat) || other.nat == nat) &&
+            (identical(other.cell, cell) || other.cell == cell) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.picture, picture) || other.picture == picture));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, gender, email, phone, nat, cell, location, name, picture);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UserImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _User implements User {
+  const factory _User(
+      {final String gender,
+      final String email,
+      final String phone,
+      final String nat,
+      final String cell,
+      required final Location location,
+      required final Name name,
+      required final Picture picture}) = _$UserImpl;
+
+  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
+
+  @override
+  String get gender;
+  @override
+  String get email;
+  @override
+  String get phone;
+  @override
+  String get nat;
+  @override
+  String get cell;
+  @override
+  Location get location;
+  @override
+  Name get name;
+  @override
+  Picture get picture;
+  @override
+  @JsonKey(ignore: true)
+  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Picture _$PictureFromJson(Map<String, dynamic> json) {
   return _Picture.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Picture {
-  String get large => throw _privateConstructorUsedError;
   String get medium => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
+  String get large => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +366,7 @@ abstract class $PictureCopyWith<$Res> {
   factory $PictureCopyWith(Picture value, $Res Function(Picture) then) =
       _$PictureCopyWithImpl<$Res, Picture>;
   @useResult
-  $Res call({String large, String medium, String thumbnail});
+  $Res call({String medium, String thumbnail, String large});
 }
 
 /// @nodoc
@@ -50,15 +382,11 @@ class _$PictureCopyWithImpl<$Res, $Val extends Picture>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? large = null,
     Object? medium = null,
     Object? thumbnail = null,
+    Object? large = null,
   }) {
     return _then(_value.copyWith(
-      large: null == large
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as String,
       medium: null == medium
           ? _value.medium
           : medium // ignore: cast_nullable_to_non_nullable
@@ -66,6 +394,10 @@ class _$PictureCopyWithImpl<$Res, $Val extends Picture>
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      large: null == large
+          ? _value.large
+          : large // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -78,7 +410,7 @@ abstract class _$$PictureImplCopyWith<$Res> implements $PictureCopyWith<$Res> {
       __$$PictureImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String large, String medium, String thumbnail});
+  $Res call({String medium, String thumbnail, String large});
 }
 
 /// @nodoc
@@ -92,15 +424,11 @@ class __$$PictureImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? large = null,
     Object? medium = null,
     Object? thumbnail = null,
+    Object? large = null,
   }) {
     return _then(_$PictureImpl(
-      large: null == large
-          ? _value.large
-          : large // ignore: cast_nullable_to_non_nullable
-              as String,
       medium: null == medium
           ? _value.medium
           : medium // ignore: cast_nullable_to_non_nullable
@@ -109,6 +437,10 @@ class __$$PictureImplCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      large: null == large
+          ? _value.large
+          : large // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -116,24 +448,24 @@ class __$$PictureImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
-  const _$PictureImpl({this.large = '', this.medium = '', this.thumbnail = ''});
+  const _$PictureImpl({this.medium = '', this.thumbnail = '', this.large = ''});
 
   factory _$PictureImpl.fromJson(Map<String, dynamic> json) =>
       _$$PictureImplFromJson(json);
 
   @override
   @JsonKey()
-  final String large;
-  @override
-  @JsonKey()
   final String medium;
   @override
   @JsonKey()
   final String thumbnail;
+  @override
+  @JsonKey()
+  final String large;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Picture(large: $large, medium: $medium, thumbnail: $thumbnail)';
+    return 'Picture(medium: $medium, thumbnail: $thumbnail, large: $large)';
   }
 
   @override
@@ -141,9 +473,9 @@ class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Picture'))
-      ..add(DiagnosticsProperty('large', large))
       ..add(DiagnosticsProperty('medium', medium))
-      ..add(DiagnosticsProperty('thumbnail', thumbnail));
+      ..add(DiagnosticsProperty('thumbnail', thumbnail))
+      ..add(DiagnosticsProperty('large', large));
   }
 
   @override
@@ -151,15 +483,15 @@ class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PictureImpl &&
-            (identical(other.large, large) || other.large == large) &&
             (identical(other.medium, medium) || other.medium == medium) &&
             (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+                other.thumbnail == thumbnail) &&
+            (identical(other.large, large) || other.large == large));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, large, medium, thumbnail);
+  int get hashCode => Object.hash(runtimeType, medium, thumbnail, large);
 
   @JsonKey(ignore: true)
   @override
@@ -177,380 +509,21 @@ class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
 
 abstract class _Picture implements Picture {
   const factory _Picture(
-      {final String large,
-      final String medium,
-      final String thumbnail}) = _$PictureImpl;
+      {final String medium,
+      final String thumbnail,
+      final String large}) = _$PictureImpl;
 
   factory _Picture.fromJson(Map<String, dynamic> json) = _$PictureImpl.fromJson;
 
-  @override
-  String get large;
   @override
   String get medium;
   @override
   String get thumbnail;
   @override
+  String get large;
+  @override
   @JsonKey(ignore: true)
   _$$PictureImplCopyWith<_$PictureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Dob _$DobFromJson(Map<String, dynamic> json) {
-  return _Dob.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Dob {
-  String get date => throw _privateConstructorUsedError;
-  num get age => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DobCopyWith<Dob> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DobCopyWith<$Res> {
-  factory $DobCopyWith(Dob value, $Res Function(Dob) then) =
-      _$DobCopyWithImpl<$Res, Dob>;
-  @useResult
-  $Res call({String date, num age});
-}
-
-/// @nodoc
-class _$DobCopyWithImpl<$Res, $Val extends Dob> implements $DobCopyWith<$Res> {
-  _$DobCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? date = null,
-    Object? age = null,
-  }) {
-    return _then(_value.copyWith(
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as num,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$DobImplCopyWith<$Res> implements $DobCopyWith<$Res> {
-  factory _$$DobImplCopyWith(_$DobImpl value, $Res Function(_$DobImpl) then) =
-      __$$DobImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String date, num age});
-}
-
-/// @nodoc
-class __$$DobImplCopyWithImpl<$Res> extends _$DobCopyWithImpl<$Res, _$DobImpl>
-    implements _$$DobImplCopyWith<$Res> {
-  __$$DobImplCopyWithImpl(_$DobImpl _value, $Res Function(_$DobImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? date = null,
-    Object? age = null,
-  }) {
-    return _then(_$DobImpl(
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as num,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DobImpl with DiagnosticableTreeMixin implements _Dob {
-  const _$DobImpl({this.date = '', this.age = 0});
-
-  factory _$DobImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DobImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final String date;
-  @override
-  @JsonKey()
-  final num age;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Dob(date: $date, age: $age)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Dob'))
-      ..add(DiagnosticsProperty('date', date))
-      ..add(DiagnosticsProperty('age', age));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DobImpl &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.age, age) || other.age == age));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, date, age);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DobImplCopyWith<_$DobImpl> get copyWith =>
-      __$$DobImplCopyWithImpl<_$DobImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DobImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Dob implements Dob {
-  const factory _Dob({final String date, final num age}) = _$DobImpl;
-
-  factory _Dob.fromJson(Map<String, dynamic> json) = _$DobImpl.fromJson;
-
-  @override
-  String get date;
-  @override
-  num get age;
-  @override
-  @JsonKey(ignore: true)
-  _$$DobImplCopyWith<_$DobImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Location _$LocationFromJson(Map<String, dynamic> json) {
-  return _Location.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Location {
-  String get city => throw _privateConstructorUsedError;
-  String get state => throw _privateConstructorUsedError;
-  String get country => throw _privateConstructorUsedError;
-  String get postcode => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LocationCopyWith<Location> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocationCopyWith<$Res> {
-  factory $LocationCopyWith(Location value, $Res Function(Location) then) =
-      _$LocationCopyWithImpl<$Res, Location>;
-  @useResult
-  $Res call({String city, String state, String country, String postcode});
-}
-
-/// @nodoc
-class _$LocationCopyWithImpl<$Res, $Val extends Location>
-    implements $LocationCopyWith<$Res> {
-  _$LocationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? city = null,
-    Object? state = null,
-    Object? country = null,
-    Object? postcode = null,
-  }) {
-    return _then(_value.copyWith(
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      postcode: null == postcode
-          ? _value.postcode
-          : postcode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LocationImplCopyWith<$Res>
-    implements $LocationCopyWith<$Res> {
-  factory _$$LocationImplCopyWith(
-          _$LocationImpl value, $Res Function(_$LocationImpl) then) =
-      __$$LocationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String city, String state, String country, String postcode});
-}
-
-/// @nodoc
-class __$$LocationImplCopyWithImpl<$Res>
-    extends _$LocationCopyWithImpl<$Res, _$LocationImpl>
-    implements _$$LocationImplCopyWith<$Res> {
-  __$$LocationImplCopyWithImpl(
-      _$LocationImpl _value, $Res Function(_$LocationImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? city = null,
-    Object? state = null,
-    Object? country = null,
-    Object? postcode = null,
-  }) {
-    return _then(_$LocationImpl(
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      postcode: null == postcode
-          ? _value.postcode
-          : postcode // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
-  const _$LocationImpl(
-      {this.city = '', this.state = '', this.country = '', this.postcode = ''});
-
-  factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LocationImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final String city;
-  @override
-  @JsonKey()
-  final String state;
-  @override
-  @JsonKey()
-  final String country;
-  @override
-  @JsonKey()
-  final String postcode;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Location(city: $city, state: $state, country: $country, postcode: $postcode)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Location'))
-      ..add(DiagnosticsProperty('city', city))
-      ..add(DiagnosticsProperty('state', state))
-      ..add(DiagnosticsProperty('country', country))
-      ..add(DiagnosticsProperty('postcode', postcode));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationImpl &&
-            (identical(other.city, city) || other.city == city) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.country, country) || other.country == country) &&
-            (identical(other.postcode, postcode) ||
-                other.postcode == postcode));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, city, state, country, postcode);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
-      __$$LocationImplCopyWithImpl<_$LocationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LocationImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Location implements Location {
-  const factory _Location(
-      {final String city,
-      final String state,
-      final String country,
-      final String postcode}) = _$LocationImpl;
-
-  factory _Location.fromJson(Map<String, dynamic> json) =
-      _$LocationImpl.fromJson;
-
-  @override
-  String get city;
-  @override
-  String get state;
-  @override
-  String get country;
-  @override
-  String get postcode;
-  @override
-  @JsonKey(ignore: true)
-  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -731,36 +704,34 @@ abstract class _Name implements Name {
       throw _privateConstructorUsedError;
 }
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+Location _$LocationFromJson(Map<String, dynamic> json) {
+  return _Location.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
-  String get gender => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
-  String get nat => throw _privateConstructorUsedError;
-  String get cell => throw _privateConstructorUsedError;
+mixin _$Location {
+  String get city => throw _privateConstructorUsedError;
+  String get state => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $LocationCopyWith<Location> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+abstract class $LocationCopyWith<$Res> {
+  factory $LocationCopyWith(Location value, $Res Function(Location) then) =
+      _$LocationCopyWithImpl<$Res, Location>;
   @useResult
-  $Res call(
-      {String gender, String email, String phone, String nat, String cell});
+  $Res call({String city, String state, String country});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$LocationCopyWithImpl<$Res, $Val extends Location>
+    implements $LocationCopyWith<$Res> {
+  _$LocationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -770,84 +741,65 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? gender = null,
-    Object? email = null,
-    Object? phone = null,
-    Object? nat = null,
-    Object? cell = null,
+    Object? city = null,
+    Object? state = null,
+    Object? country = null,
   }) {
     return _then(_value.copyWith(
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      nat: null == nat
-          ? _value.nat
-          : nat // ignore: cast_nullable_to_non_nullable
-              as String,
-      cell: null == cell
-          ? _value.cell
-          : cell // ignore: cast_nullable_to_non_nullable
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
-      __$$UserImplCopyWithImpl<$Res>;
+abstract class _$$LocationImplCopyWith<$Res>
+    implements $LocationCopyWith<$Res> {
+  factory _$$LocationImplCopyWith(
+          _$LocationImpl value, $Res Function(_$LocationImpl) then) =
+      __$$LocationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String gender, String email, String phone, String nat, String cell});
+  $Res call({String city, String state, String country});
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
-    implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
+class __$$LocationImplCopyWithImpl<$Res>
+    extends _$LocationCopyWithImpl<$Res, _$LocationImpl>
+    implements _$$LocationImplCopyWith<$Res> {
+  __$$LocationImplCopyWithImpl(
+      _$LocationImpl _value, $Res Function(_$LocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? gender = null,
-    Object? email = null,
-    Object? phone = null,
-    Object? nat = null,
-    Object? cell = null,
+    Object? city = null,
+    Object? state = null,
+    Object? country = null,
   }) {
-    return _then(_$UserImpl(
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
+    return _then(_$LocationImpl(
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
               as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-      nat: null == nat
-          ? _value.nat
-          : nat // ignore: cast_nullable_to_non_nullable
-              as String,
-      cell: null == cell
-          ? _value.cell
-          : cell // ignore: cast_nullable_to_non_nullable
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -855,102 +807,82 @@ class __$$UserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl with DiagnosticableTreeMixin implements _User {
-  const _$UserImpl(
-      {this.gender = '',
-      this.email = '',
-      this.phone = '',
-      this.nat = '',
-      this.cell = ''});
+class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
+  const _$LocationImpl({this.city = '', this.state = '', this.country = ''});
 
-  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserImplFromJson(json);
+  factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LocationImplFromJson(json);
 
   @override
   @JsonKey()
-  final String gender;
+  final String city;
   @override
   @JsonKey()
-  final String email;
+  final String state;
   @override
   @JsonKey()
-  final String phone;
-  @override
-  @JsonKey()
-  final String nat;
-  @override
-  @JsonKey()
-  final String cell;
+  final String country;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(gender: $gender, email: $email, phone: $phone, nat: $nat, cell: $cell)';
+    return 'Location(city: $city, state: $state, country: $country)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'User'))
-      ..add(DiagnosticsProperty('gender', gender))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('phone', phone))
-      ..add(DiagnosticsProperty('nat', nat))
-      ..add(DiagnosticsProperty('cell', cell));
+      ..add(DiagnosticsProperty('type', 'Location'))
+      ..add(DiagnosticsProperty('city', city))
+      ..add(DiagnosticsProperty('state', state))
+      ..add(DiagnosticsProperty('country', country));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserImpl &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.nat, nat) || other.nat == nat) &&
-            (identical(other.cell, cell) || other.cell == cell));
+            other is _$LocationImpl &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.country, country) || other.country == country));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, gender, email, phone, nat, cell);
+  int get hashCode => Object.hash(runtimeType, city, state, country);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
+  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
+      __$$LocationImplCopyWithImpl<_$LocationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserImplToJson(
+    return _$$LocationImplToJson(
       this,
     );
   }
 }
 
-abstract class _User implements User {
-  const factory _User(
-      {final String gender,
-      final String email,
-      final String phone,
-      final String nat,
-      final String cell}) = _$UserImpl;
+abstract class _Location implements Location {
+  const factory _Location(
+      {final String city,
+      final String state,
+      final String country}) = _$LocationImpl;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
+  factory _Location.fromJson(Map<String, dynamic> json) =
+      _$LocationImpl.fromJson;
 
   @override
-  String get gender;
+  String get city;
   @override
-  String get email;
+  String get state;
   @override
-  String get phone;
-  @override
-  String get nat;
-  @override
-  String get cell;
+  String get country;
   @override
   @JsonKey(ignore: true)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
+  _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

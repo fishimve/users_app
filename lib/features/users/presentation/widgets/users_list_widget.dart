@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:users_app/features/shared/entities/user.dart';
+import 'package:users_app/features/users/presentation/screens/user_details_screen.dart';
 
 class UsersListWidget extends StatelessWidget {
   final List<User> users;
@@ -22,7 +22,11 @@ class _UserCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushNamed('details'),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => UserDetailsScreen(user: user),
+        ),
+      ),
       child: Container(
         height: 120,
         decoration: BoxDecoration(
@@ -38,7 +42,7 @@ class _UserCard extends StatelessWidget {
             SizedBox(
               width: 120,
               child: Image.network(
-                'https://i.pravatar.cc/300',
+                user.picture.medium,
                 fit: BoxFit.contain,
               ),
             ),
@@ -54,11 +58,14 @@ class _UserCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    'Александр\nСергеевич Яровцев',
+                    '${user.name.title} ${user.name.first}\n${user.name.last}',
                     style: Theme.of(context).textTheme.bodyLarge,
-                  )
-
-                  // email
+                  ),
+                  const SizedBox(height: 3),
+                  Text(
+                    user.email,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
                 ],
               ),
             ),
