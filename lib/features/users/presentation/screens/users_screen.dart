@@ -10,27 +10,38 @@ class UsersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Random users')),
-      body: BlocConsumer<UsersBloc, UsersState>(
-          bloc: context.read<UsersBloc>()..add(const GetUsersEvent(limit: 3)),
-          listener: (context, state) {
-            if (state is UsersException) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.exception.toString())),
-              );
-            }
-          },
-          builder: (context, state) {
-            if (state is UsersDone) {
-              if (state.users == null) return const Text('No users');
-              return UsersListWidget(users: state.users!);
-            } else if (state is UsersLoading) {
-              return const Center(child: CircularProgressIndicator());
-            } else {
-              return const Center(child: CircularProgressIndicator());
-            }
-          }),
+    return BlocConsumer<UsersBloc, UsersState>(
+      bloc: context.read<UsersBloc>()..add(const GetUsersEvent()),
+      listener: (context, state) {
+        if (state is UsersException) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(state.exception.toString())),
+          );
+        }
+      },
+      builder: (context, state) {
+        if (state is UsersDone) {
+          if (state.users == null) return const Text('No users');
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Random users'),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    context.read<UsersBloc>().add(const GetUsersEvent());
+                  },
+                  icon: const Icon(Icons.autorenew_outlined),
+                )
+              ],
+            ),
+            body: UsersListWidget(users: state.users!),
+          );
+        } else if (state is UsersLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
     );
   }
 }
