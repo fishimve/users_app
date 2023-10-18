@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:users_app/features/shared/entities/user.dart';
 
@@ -7,6 +8,19 @@ class UserDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        title: const Text('Имя тут'),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+                // address , bd, phone
+            ],
+        ),
+      ),
+    );
   }
 }

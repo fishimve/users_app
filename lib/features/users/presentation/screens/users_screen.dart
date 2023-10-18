@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_bloc.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_event.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_state.dart';
+import 'package:users_app/features/users/presentation/widgets/users_list_widget.dart';
 
 class UsersScreen extends StatelessWidget {
   const UsersScreen({super.key});
@@ -22,8 +23,8 @@ class UsersScreen extends StatelessWidget {
           },
           builder: (context, state) {
             if (state is UsersDone) {
-              print(state.users);
-              return Container();
+              if (state.users == null) return const Text('No users');
+              return UsersListWidget(users: state.users!);
             } else if (state is UsersLoading) {
               return const Center(child: CircularProgressIndicator());
             } else {
