@@ -18,6 +18,14 @@ class UserDetailsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: 150,
+                child: Image.network(
+                  user.picture.large,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(height: 32),
               _InfoWidget(
                 title: 'Address',
                 content:
@@ -44,6 +52,7 @@ class UserDetailsScreen extends StatelessWidget {
                 title: 'Email',
                 content: user.email,
               ),
+              const SizedBox(height: 32),
             ],
           ),
         ),
