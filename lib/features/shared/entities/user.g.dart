@@ -6,44 +6,41 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
+      gender: json['gender'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      phone: json['phone'] as String? ?? '',
+      nat: json['nat'] as String? ?? '',
+      cell: json['cell'] as String? ?? '',
+      location: Location.fromJson(json['location'] as Map<String, dynamic>),
+      name: Name.fromJson(json['name'] as Map<String, dynamic>),
+      picture: Picture.fromJson(json['picture'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      'gender': instance.gender,
+      'email': instance.email,
+      'phone': instance.phone,
+      'nat': instance.nat,
+      'cell': instance.cell,
+      'location': instance.location,
+      'name': instance.name,
+      'picture': instance.picture,
+    };
+
 _$PictureImpl _$$PictureImplFromJson(Map<String, dynamic> json) =>
     _$PictureImpl(
-      large: json['large'] as String? ?? '',
       medium: json['medium'] as String? ?? '',
       thumbnail: json['thumbnail'] as String? ?? '',
+      large: json['large'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$PictureImplToJson(_$PictureImpl instance) =>
     <String, dynamic>{
-      'large': instance.large,
       'medium': instance.medium,
       'thumbnail': instance.thumbnail,
-    };
-
-_$DobImpl _$$DobImplFromJson(Map<String, dynamic> json) => _$DobImpl(
-      date: json['date'] as String? ?? '',
-      age: json['age'] as num? ?? 0,
-    );
-
-Map<String, dynamic> _$$DobImplToJson(_$DobImpl instance) => <String, dynamic>{
-      'date': instance.date,
-      'age': instance.age,
-    };
-
-_$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
-    _$LocationImpl(
-      city: json['city'] as String? ?? '',
-      state: json['state'] as String? ?? '',
-      country: json['country'] as String? ?? '',
-      postcode: json['postcode'] as String? ?? '',
-    );
-
-Map<String, dynamic> _$$LocationImplToJson(_$LocationImpl instance) =>
-    <String, dynamic>{
-      'city': instance.city,
-      'state': instance.state,
-      'country': instance.country,
-      'postcode': instance.postcode,
+      'large': instance.large,
     };
 
 _$NameImpl _$$NameImplFromJson(Map<String, dynamic> json) => _$NameImpl(
@@ -59,19 +56,16 @@ Map<String, dynamic> _$$NameImplToJson(_$NameImpl instance) =>
       'last': instance.last,
     };
 
-_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      gender: json['gender'] as String? ?? '',
-      email: json['email'] as String? ?? '',
-      phone: json['phone'] as String? ?? '',
-      nat: json['nat'] as String? ?? '',
-      cell: json['cell'] as String? ?? '',
+_$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
+    _$LocationImpl(
+      city: json['city'] as String? ?? '',
+      state: json['state'] as String? ?? '',
+      country: json['country'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+Map<String, dynamic> _$$LocationImplToJson(_$LocationImpl instance) =>
     <String, dynamic>{
-      'gender': instance.gender,
-      'email': instance.email,
-      'phone': instance.phone,
-      'nat': instance.nat,
-      'cell': instance.cell,
+      'city': instance.city,
+      'state': instance.state,
+      'country': instance.country,
     };
