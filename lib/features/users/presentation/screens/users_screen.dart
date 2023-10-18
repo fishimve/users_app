@@ -11,7 +11,7 @@ class UsersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UsersBloc, UsersState>(
-      bloc: context.read<UsersBloc>()..add(const GetUsersEvent()),
+      bloc: context.read<UsersBloc>()..add(const GetUsersEvent(limit: 20)),
       listener: (context, state) {
         if (state is UsersException) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -28,7 +28,7 @@ class UsersScreen extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: () {
-                    context.read<UsersBloc>().add(const GetUsersEvent());
+                    context.read<UsersBloc>().add(const GetUsersEvent(limit: 20));
                   },
                   icon: const Icon(Icons.autorenew_outlined),
                 )

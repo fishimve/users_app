@@ -12,8 +12,8 @@ class UsersRepositoryImpl extends UsersRepository {
   );
   @override
   Future<List<User>> getRandomUsers({int? limit}) async {
-    // final users = await remoteUsersDataSource.getRandomUsersFromApi(limit);
-    final users = await mockUsersDataSource.getMockedRandomUsers(limit);
+    final users = await remoteUsersDataSource.getRandomUsersFromApi(limit);
+    // final users = await mockUsersDataSource.getMockedRandomUsers(limit);
     return users;
   }
 }
