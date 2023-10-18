@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:users_app/core/resources/data_state.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_bloc.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_event.dart';
 import 'package:users_app/features/users/presentation/bloc/users/users_state.dart';
@@ -13,23 +12,21 @@ class UsersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Random users')),
       body: BlocConsumer<UsersBloc, UsersState>(
-          bloc: context.read<UsersBloc>()..add(const GetUsersEvent(limit: 20)),
+          bloc: context.read<UsersBloc>()..add(const GetUsersEvent(limit: 3)),
           listener: (context, state) {
-            if (state is DataException) {
+            if (state is UsersException) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.exception.toString())),
               );
             }
           },
-          builder: (_, state) {
-            if (state is DataSuccess) {
+          builder: (context, state) {
+            if (state is UsersDone) {
               print(state.users);
               return Container();
-            } else if (state is DataException) {
-              print('error');
-              return Container();
+            } else if (state is UsersLoading) {
+              return const Center(child: CircularProgressIndicator());
             } else {
-              print('init');
               return const Center(child: CircularProgressIndicator());
             }
           }),

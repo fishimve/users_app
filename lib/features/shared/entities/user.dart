@@ -7,9 +7,9 @@ part 'user.g.dart';
 @freezed
 class Picture with _$Picture {
   const factory Picture({
-    required String large,
-    required String medium,
-    required String thumbnail,
+    @Default('') String large,
+    @Default('') String medium,
+    @Default('') String thumbnail,
   }) = _Picture;
 
   factory Picture.fromJson(Map<String, dynamic> json) =>
@@ -19,8 +19,8 @@ class Picture with _$Picture {
 @freezed
 class Dob with _$Dob {
   const factory Dob({
-    required String date,
-    // required num age,
+    @Default('') String date,
+    @Default(0) num age,
   }) = _Dob;
 
   factory Dob.fromJson(Map<String, dynamic> json) => _$DobFromJson(json);
@@ -33,22 +33,10 @@ class Location with _$Location {
     @Default('') String state,
     @Default('') String country,
     @Default('') String postcode,
-    required Street street,
-    Dob? geo,
   }) = _Location;
 
   factory Location.fromJson(Map<String, dynamic> json) =>
       _$LocationFromJson(json);
-}
-
-@freezed
-class Street with _$Street {
-  const factory Street({
-    @Default('') String number,
-    @Default('') String name,
-  }) = _Street;
-
-  factory Street.fromJson(Map<String, dynamic> json) => _$StreetFromJson(json);
 }
 
 @freezed
@@ -65,12 +53,14 @@ class Name with _$Name {
 @freezed
 class User with _$User {
   const factory User({
-    required String gender,
-    required String email,
-    required String phone,
-    required String nat,
-    required String cell,
-
+    @Default('') String gender,
+    @Default('') String email,
+    @Default('') String phone,
+    @Default('') String nat,
+    @Default('') String cell,
+    // required Location location,
+    // required Name name,
+    // required Picture picture,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

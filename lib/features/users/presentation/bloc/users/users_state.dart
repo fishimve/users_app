@@ -1,11 +1,9 @@
-import 'dart:io';
-
 import 'package:equatable/equatable.dart';
 import 'package:users_app/features/shared/entities/user.dart';
 
 abstract class UsersState extends Equatable {
   final List<User>? users;
-  final HttpException? exception;
+  final String? exception;
 
   const UsersState({this.users, this.exception});
   @override
@@ -21,5 +19,5 @@ class UsersDone extends UsersState {
 }
 
 class UsersException extends UsersState {
-  const UsersException(HttpException e) : super(exception: e);
+  const UsersException(String e) : super(exception: e);
 }

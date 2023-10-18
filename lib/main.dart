@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:users_app/config/routes/router.dart';
+import 'package:users_app/features/users/data/data_sources/mock_users_data_source.dart';
 import 'package:users_app/features/users/data/data_sources/remote_users_data_source.dart';
 import 'package:users_app/features/users/data/repository/users_repository_impl.dart';
 import 'package:users_app/features/users/domain/usecases/get_users.dart';
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-      create: (context) => UsersRepositoryImpl(RemoteUsersDataSourceImpl()),
+      create: (context) => UsersRepositoryImpl(
+        RemoteUsersDataSourceImpl(),
+        MockUsersDataSourceImpl(),
+      ),
       child: BlocProvider(
         create: (context) => UsersBloc(
           GetUsersUseCase(context.read<UsersRepositoryImpl>()),

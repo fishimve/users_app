@@ -116,17 +116,19 @@ class __$$PictureImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
-  const _$PictureImpl(
-      {required this.large, required this.medium, required this.thumbnail});
+  const _$PictureImpl({this.large = '', this.medium = '', this.thumbnail = ''});
 
   factory _$PictureImpl.fromJson(Map<String, dynamic> json) =>
       _$$PictureImplFromJson(json);
 
   @override
+  @JsonKey()
   final String large;
   @override
+  @JsonKey()
   final String medium;
   @override
+  @JsonKey()
   final String thumbnail;
 
   @override
@@ -175,9 +177,9 @@ class _$PictureImpl with DiagnosticableTreeMixin implements _Picture {
 
 abstract class _Picture implements Picture {
   const factory _Picture(
-      {required final String large,
-      required final String medium,
-      required final String thumbnail}) = _$PictureImpl;
+      {final String large,
+      final String medium,
+      final String thumbnail}) = _$PictureImpl;
 
   factory _Picture.fromJson(Map<String, dynamic> json) = _$PictureImpl.fromJson;
 
@@ -200,6 +202,7 @@ Dob _$DobFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Dob {
   String get date => throw _privateConstructorUsedError;
+  num get age => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -211,7 +214,7 @@ abstract class $DobCopyWith<$Res> {
   factory $DobCopyWith(Dob value, $Res Function(Dob) then) =
       _$DobCopyWithImpl<$Res, Dob>;
   @useResult
-  $Res call({String date});
+  $Res call({String date, num age});
 }
 
 /// @nodoc
@@ -227,12 +230,17 @@ class _$DobCopyWithImpl<$Res, $Val extends Dob> implements $DobCopyWith<$Res> {
   @override
   $Res call({
     Object? date = null,
+    Object? age = null,
   }) {
     return _then(_value.copyWith(
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String,
+      age: null == age
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as num,
     ) as $Val);
   }
 }
@@ -243,7 +251,7 @@ abstract class _$$DobImplCopyWith<$Res> implements $DobCopyWith<$Res> {
       __$$DobImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String date});
+  $Res call({String date, num age});
 }
 
 /// @nodoc
@@ -256,12 +264,17 @@ class __$$DobImplCopyWithImpl<$Res> extends _$DobCopyWithImpl<$Res, _$DobImpl>
   @override
   $Res call({
     Object? date = null,
+    Object? age = null,
   }) {
     return _then(_$DobImpl(
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as String,
+      age: null == age
+          ? _value.age
+          : age // ignore: cast_nullable_to_non_nullable
+              as num,
     ));
   }
 }
@@ -269,17 +282,21 @@ class __$$DobImplCopyWithImpl<$Res> extends _$DobCopyWithImpl<$Res, _$DobImpl>
 /// @nodoc
 @JsonSerializable()
 class _$DobImpl with DiagnosticableTreeMixin implements _Dob {
-  const _$DobImpl({required this.date});
+  const _$DobImpl({this.date = '', this.age = 0});
 
   factory _$DobImpl.fromJson(Map<String, dynamic> json) =>
       _$$DobImplFromJson(json);
 
   @override
+  @JsonKey()
   final String date;
+  @override
+  @JsonKey()
+  final num age;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Dob(date: $date)';
+    return 'Dob(date: $date, age: $age)';
   }
 
   @override
@@ -287,7 +304,8 @@ class _$DobImpl with DiagnosticableTreeMixin implements _Dob {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Dob'))
-      ..add(DiagnosticsProperty('date', date));
+      ..add(DiagnosticsProperty('date', date))
+      ..add(DiagnosticsProperty('age', age));
   }
 
   @override
@@ -295,12 +313,13 @@ class _$DobImpl with DiagnosticableTreeMixin implements _Dob {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DobImpl &&
-            (identical(other.date, date) || other.date == date));
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.age, age) || other.age == age));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, date);
+  int get hashCode => Object.hash(runtimeType, date, age);
 
   @JsonKey(ignore: true)
   @override
@@ -317,12 +336,14 @@ class _$DobImpl with DiagnosticableTreeMixin implements _Dob {
 }
 
 abstract class _Dob implements Dob {
-  const factory _Dob({required final String date}) = _$DobImpl;
+  const factory _Dob({final String date, final num age}) = _$DobImpl;
 
   factory _Dob.fromJson(Map<String, dynamic> json) = _$DobImpl.fromJson;
 
   @override
   String get date;
+  @override
+  num get age;
   @override
   @JsonKey(ignore: true)
   _$$DobImplCopyWith<_$DobImpl> get copyWith =>
@@ -339,8 +360,6 @@ mixin _$Location {
   String get state => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
   String get postcode => throw _privateConstructorUsedError;
-  Street get street => throw _privateConstructorUsedError;
-  Dob? get geo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -353,16 +372,7 @@ abstract class $LocationCopyWith<$Res> {
   factory $LocationCopyWith(Location value, $Res Function(Location) then) =
       _$LocationCopyWithImpl<$Res, Location>;
   @useResult
-  $Res call(
-      {String city,
-      String state,
-      String country,
-      String postcode,
-      Street street,
-      Dob? geo});
-
-  $StreetCopyWith<$Res> get street;
-  $DobCopyWith<$Res>? get geo;
+  $Res call({String city, String state, String country, String postcode});
 }
 
 /// @nodoc
@@ -382,8 +392,6 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
     Object? state = null,
     Object? country = null,
     Object? postcode = null,
-    Object? street = null,
-    Object? geo = freezed,
   }) {
     return _then(_value.copyWith(
       city: null == city
@@ -402,35 +410,7 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
           ? _value.postcode
           : postcode // ignore: cast_nullable_to_non_nullable
               as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as Street,
-      geo: freezed == geo
-          ? _value.geo
-          : geo // ignore: cast_nullable_to_non_nullable
-              as Dob?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StreetCopyWith<$Res> get street {
-    return $StreetCopyWith<$Res>(_value.street, (value) {
-      return _then(_value.copyWith(street: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DobCopyWith<$Res>? get geo {
-    if (_value.geo == null) {
-      return null;
-    }
-
-    return $DobCopyWith<$Res>(_value.geo!, (value) {
-      return _then(_value.copyWith(geo: value) as $Val);
-    });
   }
 }
 
@@ -442,18 +422,7 @@ abstract class _$$LocationImplCopyWith<$Res>
       __$$LocationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String city,
-      String state,
-      String country,
-      String postcode,
-      Street street,
-      Dob? geo});
-
-  @override
-  $StreetCopyWith<$Res> get street;
-  @override
-  $DobCopyWith<$Res>? get geo;
+  $Res call({String city, String state, String country, String postcode});
 }
 
 /// @nodoc
@@ -471,8 +440,6 @@ class __$$LocationImplCopyWithImpl<$Res>
     Object? state = null,
     Object? country = null,
     Object? postcode = null,
-    Object? street = null,
-    Object? geo = freezed,
   }) {
     return _then(_$LocationImpl(
       city: null == city
@@ -491,14 +458,6 @@ class __$$LocationImplCopyWithImpl<$Res>
           ? _value.postcode
           : postcode // ignore: cast_nullable_to_non_nullable
               as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as Street,
-      geo: freezed == geo
-          ? _value.geo
-          : geo // ignore: cast_nullable_to_non_nullable
-              as Dob?,
     ));
   }
 }
@@ -507,12 +466,7 @@ class __$$LocationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
   const _$LocationImpl(
-      {this.city = '',
-      this.state = '',
-      this.country = '',
-      this.postcode = '',
-      required this.street,
-      this.geo});
+      {this.city = '', this.state = '', this.country = '', this.postcode = ''});
 
   factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
       _$$LocationImplFromJson(json);
@@ -529,14 +483,10 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
   @override
   @JsonKey()
   final String postcode;
-  @override
-  final Street street;
-  @override
-  final Dob? geo;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Location(city: $city, state: $state, country: $country, postcode: $postcode, street: $street, geo: $geo)';
+    return 'Location(city: $city, state: $state, country: $country, postcode: $postcode)';
   }
 
   @override
@@ -547,9 +497,7 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
       ..add(DiagnosticsProperty('city', city))
       ..add(DiagnosticsProperty('state', state))
       ..add(DiagnosticsProperty('country', country))
-      ..add(DiagnosticsProperty('postcode', postcode))
-      ..add(DiagnosticsProperty('street', street))
-      ..add(DiagnosticsProperty('geo', geo));
+      ..add(DiagnosticsProperty('postcode', postcode));
   }
 
   @override
@@ -561,15 +509,12 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
             (identical(other.state, state) || other.state == state) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.postcode, postcode) ||
-                other.postcode == postcode) &&
-            (identical(other.street, street) || other.street == street) &&
-            (identical(other.geo, geo) || other.geo == geo));
+                other.postcode == postcode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, city, state, country, postcode, street, geo);
+  int get hashCode => Object.hash(runtimeType, city, state, country, postcode);
 
   @JsonKey(ignore: true)
   @override
@@ -590,9 +535,7 @@ abstract class _Location implements Location {
       {final String city,
       final String state,
       final String country,
-      final String postcode,
-      required final Street street,
-      final Dob? geo}) = _$LocationImpl;
+      final String postcode}) = _$LocationImpl;
 
   factory _Location.fromJson(Map<String, dynamic> json) =
       _$LocationImpl.fromJson;
@@ -606,172 +549,8 @@ abstract class _Location implements Location {
   @override
   String get postcode;
   @override
-  Street get street;
-  @override
-  Dob? get geo;
-  @override
   @JsonKey(ignore: true)
   _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Street _$StreetFromJson(Map<String, dynamic> json) {
-  return _Street.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Street {
-  String get number => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $StreetCopyWith<Street> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StreetCopyWith<$Res> {
-  factory $StreetCopyWith(Street value, $Res Function(Street) then) =
-      _$StreetCopyWithImpl<$Res, Street>;
-  @useResult
-  $Res call({String number, String name});
-}
-
-/// @nodoc
-class _$StreetCopyWithImpl<$Res, $Val extends Street>
-    implements $StreetCopyWith<$Res> {
-  _$StreetCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? number = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      number: null == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$StreetImplCopyWith<$Res> implements $StreetCopyWith<$Res> {
-  factory _$$StreetImplCopyWith(
-          _$StreetImpl value, $Res Function(_$StreetImpl) then) =
-      __$$StreetImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String number, String name});
-}
-
-/// @nodoc
-class __$$StreetImplCopyWithImpl<$Res>
-    extends _$StreetCopyWithImpl<$Res, _$StreetImpl>
-    implements _$$StreetImplCopyWith<$Res> {
-  __$$StreetImplCopyWithImpl(
-      _$StreetImpl _value, $Res Function(_$StreetImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? number = null,
-    Object? name = null,
-  }) {
-    return _then(_$StreetImpl(
-      number: null == number
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$StreetImpl with DiagnosticableTreeMixin implements _Street {
-  const _$StreetImpl({this.number = '', this.name = ''});
-
-  factory _$StreetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StreetImplFromJson(json);
-
-  @override
-  @JsonKey()
-  final String number;
-  @override
-  @JsonKey()
-  final String name;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Street(number: $number, name: $name)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Street'))
-      ..add(DiagnosticsProperty('number', number))
-      ..add(DiagnosticsProperty('name', name));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreetImpl &&
-            (identical(other.number, number) || other.number == number) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, number, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StreetImplCopyWith<_$StreetImpl> get copyWith =>
-      __$$StreetImplCopyWithImpl<_$StreetImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StreetImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Street implements Street {
-  const factory _Street({final String number, final String name}) =
-      _$StreetImpl;
-
-  factory _Street.fromJson(Map<String, dynamic> json) = _$StreetImpl.fromJson;
-
-  @override
-  String get number;
-  @override
-  String get name;
-  @override
-  @JsonKey(ignore: true)
-  _$$StreetImplCopyWith<_$StreetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -963,9 +742,6 @@ mixin _$User {
   String get phone => throw _privateConstructorUsedError;
   String get nat => throw _privateConstructorUsedError;
   String get cell => throw _privateConstructorUsedError;
-  Name get company => throw _privateConstructorUsedError;
-  Location get address => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -978,18 +754,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String gender,
-      String email,
-      String phone,
-      String nat,
-      String cell,
-      Name company,
-      Location address,
-      Name name});
-
-  $NameCopyWith<$Res> get company;
-  $LocationCopyWith<$Res> get address;
-  $NameCopyWith<$Res> get name;
+      {String gender, String email, String phone, String nat, String cell});
 }
 
 /// @nodoc
@@ -1010,9 +775,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? phone = null,
     Object? nat = null,
     Object? cell = null,
-    Object? company = null,
-    Object? address = null,
-    Object? name = null,
   }) {
     return _then(_value.copyWith(
       gender: null == gender
@@ -1035,43 +797,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.cell
           : cell // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as Name,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Location,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as Name,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $NameCopyWith<$Res> get company {
-    return $NameCopyWith<$Res>(_value.company, (value) {
-      return _then(_value.copyWith(company: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $LocationCopyWith<$Res> get address {
-    return $LocationCopyWith<$Res>(_value.address, (value) {
-      return _then(_value.copyWith(address: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $NameCopyWith<$Res> get name {
-    return $NameCopyWith<$Res>(_value.name, (value) {
-      return _then(_value.copyWith(name: value) as $Val);
-    });
   }
 }
 
@@ -1083,21 +809,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String gender,
-      String email,
-      String phone,
-      String nat,
-      String cell,
-      Name company,
-      Location address,
-      Name name});
-
-  @override
-  $NameCopyWith<$Res> get company;
-  @override
-  $LocationCopyWith<$Res> get address;
-  @override
-  $NameCopyWith<$Res> get name;
+      {String gender, String email, String phone, String nat, String cell});
 }
 
 /// @nodoc
@@ -1115,9 +827,6 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? phone = null,
     Object? nat = null,
     Object? cell = null,
-    Object? company = null,
-    Object? address = null,
-    Object? name = null,
   }) {
     return _then(_$UserImpl(
       gender: null == gender
@@ -1140,18 +849,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.cell
           : cell // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as Name,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as Location,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as Name,
     ));
   }
 }
@@ -1160,38 +857,34 @@ class __$$UserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UserImpl with DiagnosticableTreeMixin implements _User {
   const _$UserImpl(
-      {required this.gender,
-      required this.email,
-      required this.phone,
-      required this.nat,
-      required this.cell,
-      required this.company,
-      required this.address,
-      required this.name});
+      {this.gender = '',
+      this.email = '',
+      this.phone = '',
+      this.nat = '',
+      this.cell = ''});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
   @override
+  @JsonKey()
   final String gender;
   @override
+  @JsonKey()
   final String email;
   @override
+  @JsonKey()
   final String phone;
   @override
+  @JsonKey()
   final String nat;
   @override
+  @JsonKey()
   final String cell;
-  @override
-  final Name company;
-  @override
-  final Location address;
-  @override
-  final Name name;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(gender: $gender, email: $email, phone: $phone, nat: $nat, cell: $cell, company: $company, address: $address, name: $name)';
+    return 'User(gender: $gender, email: $email, phone: $phone, nat: $nat, cell: $cell)';
   }
 
   @override
@@ -1203,10 +896,7 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
       ..add(DiagnosticsProperty('email', email))
       ..add(DiagnosticsProperty('phone', phone))
       ..add(DiagnosticsProperty('nat', nat))
-      ..add(DiagnosticsProperty('cell', cell))
-      ..add(DiagnosticsProperty('company', company))
-      ..add(DiagnosticsProperty('address', address))
-      ..add(DiagnosticsProperty('name', name));
+      ..add(DiagnosticsProperty('cell', cell));
   }
 
   @override
@@ -1218,16 +908,12 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.nat, nat) || other.nat == nat) &&
-            (identical(other.cell, cell) || other.cell == cell) &&
-            (identical(other.company, company) || other.company == company) &&
-            (identical(other.address, address) || other.address == address) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.cell, cell) || other.cell == cell));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, gender, email, phone, nat, cell, company, address, name);
+  int get hashCode => Object.hash(runtimeType, gender, email, phone, nat, cell);
 
   @JsonKey(ignore: true)
   @override
@@ -1245,14 +931,11 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final String gender,
-      required final String email,
-      required final String phone,
-      required final String nat,
-      required final String cell,
-      required final Name company,
-      required final Location address,
-      required final Name name}) = _$UserImpl;
+      {final String gender,
+      final String email,
+      final String phone,
+      final String nat,
+      final String cell}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -1266,12 +949,6 @@ abstract class _User implements User {
   String get nat;
   @override
   String get cell;
-  @override
-  Name get company;
-  @override
-  Location get address;
-  @override
-  Name get name;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
