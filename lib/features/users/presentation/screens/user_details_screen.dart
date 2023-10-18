@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:users_app/features/shared/entities/user.dart';
 
 class UserDetailsScreen extends StatelessWidget {
